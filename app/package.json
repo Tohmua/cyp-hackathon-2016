@@ -1,24 +1,48 @@
 {
-  "author": "Your Name Here",
-  "name": "app",
-  "repository": "",
-  "description": "",
+  "name": "touchstonejs-starter",
   "version": "1.0.0",
-  "main": "./app/app.js",
-  "reapp": "0.8",
-  "scripts": {
-    "test": "",
-    "start": "reapp run"
+  "description": "Touchstone Starter",
+  "main": "src/js/app.js",
+  "author": "Jed Watson",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/touchstonejs/touchstonejs-starter.git"
   },
   "dependencies": {
-    "react": "^0.13.2",
-    "reapp-kit": "^1.2.15",
-    "reapp-ui": "^0.12.54"
+    "async": "^1.5.0",
+    "classnames": "^2.2.1",
+    "cordova-dialogs": "^1.0.2",
+    "httpify": "^3.0.0",
+    "react": "^0.14.3",
+    "react-addons-css-transition-group": "^0.14.3",
+    "react-container": "^0.3.1",
+    "react-dom": "^0.14.3",
+    "react-sentry": "^1.0.2",
+    "react-tappable": "^0.7.2",
+    "react-timers": "^5.0.0",
+    "touchstonejs": "^0.7.3"
   },
   "devDependencies": {
-    "babel-loader": "^5.3.3",
-    "reapp": "^0.8.28",
-    "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1"
+    "gulp": "^3.9.0",
+    "happiness": "*",
+    "touchstonejs-tasks": "*"
+  },
+  "scripts": {
+    "build": "gulp clean && gulp build",
+    "build:production": "gulp clean && NODE_ENV=production gulp build",
+    "lint": "happiness",
+    "test": "npm run lint",
+    "start": "gulp clean && gulp dev",
+    "watch": "gulp clean && gulp watch"
+  },
+  "happiness": {
+    "ignore": [
+      "platforms",
+      "plugins",
+      "src/data",
+      "www"
+    ]
   }
 }
