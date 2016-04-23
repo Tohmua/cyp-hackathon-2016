@@ -17,7 +17,7 @@
     "react-blink": "^1.0.2",
     "react-container": "^0.2.2",
     "react-sentry": "^0.4.0",
-    "react-swiper": "^0.1.5",
+    "react-swipeable": "^3.3.1",
     "react-tappable": "^0.5.1",
     "react-timers": "^3.1.0",
     "touchstonejs": "git+https://github.com/touchstonejs/touchstonejs.git#3a0d5dbb2a3ee987aefe9d306855a60b0577866b",
