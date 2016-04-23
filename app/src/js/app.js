@@ -239,23 +239,26 @@ var TabViewController = React.createClass({
 					<View name="about" component={require('./views/about')} />
 				</ViewManager>
 				<Tabs.Navigator value={selectedTab} onChange={this.selectTab}>
-					<Tabs.Tab value="schedule">
-						<span className="Tabs-Icon Tabs-Icon--schedule" />
-						<Tabs.Label>Schedule</Tabs.Label>
+					<Tabs.Tab value="mood">
+						<span className="Tabs-Icon Tabs-Icon--mood" />
+						<Tabs.Label>Mood</Tabs.Label>
 					</Tabs.Tab>
-					<Tabs.Tab value="people">
-						<span className="Tabs-Icon Tabs-Icon--people" />
-						<Tabs.Label>People</Tabs.Label>
+					<Tabs.Tab value="events">
+						<span className="Tabs-Icon Tabs-Icon--events" />
+						<Tabs.Label>Events</Tabs.Label>
 					</Tabs.Tab>
-					<Tabs.Tab value="event">
-						<span className="Tabs-Icon Tabs-Icon--event" />
-						<Tabs.Label>Event</Tabs.Label>
+					<Tabs.Tab value="help">
+						<span className="Tabs-Icon Tabs-Icon--help" />
+						<Tabs.Label>Help</Tabs.Label>
 					</Tabs.Tab>
-					<Tabs.Tab value="me">
-						<span className="Tabs-Icon Tabs-Icon--me" />
-						<Tabs.Label>Me</Tabs.Label>
+					<Tabs.Tab value="lists">
+						<span className="Tabs-Icon Tabs-Icon--lists" />
+						<Tabs.Label>Lists</Tabs.Label>
 					</Tabs.Tab>
-					{this.renderAboutTab()}
+					<Tabs.Tab value="rewards">
+						<span className="Tabs-Icon Tabs-Icon--rewards" />
+						<Tabs.Label>Rewards</Tabs.Label>
+					</Tabs.Tab>
 				</Tabs.Navigator>
 			</Container>
 		);
