@@ -85,12 +85,11 @@ var TabView = React.createClass({
 		return (
 			<Container>
 				<ViewManager ref="vm" name="tabs" defaultView={this.state.selectedTab} onViewChange={this.onViewChange}>
-					<View name="schedule" component={require('../views/schedule')} />
-					<View name="people" me={me} component={require('../views/people')} />
-					<View name="event" component={require('../views/event')} />
-					<View name="me" me={me} component={require('../views/me')} />
-					<View name="me-edit" component={require('../views/me/edit')} />
-					<View name="about" component={require('../views/about')} />
+					<View name="mood" component={require('../views/mood')} />
+					<View name="events" component={require('../views/events')} />
+					<View name="help" component={require('../views/help')} />
+					<View name="lists" component={require('../views/lists')} />
+					<View name="rewards" component={require('../views/rewards')} />
 				</ViewManager>
 				<Tabs.Navigator value={selectedTab} onChange={this.selectTab}>
 					<Tabs.Tab value="mood">
