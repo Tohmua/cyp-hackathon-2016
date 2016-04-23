@@ -22,6 +22,14 @@ const telephone = [
 ]
 
 const TelephoneNumbers = React.createClass({
+    statics: {
+        navigationBar: 'main',
+        getNavigation (props) {
+            return {
+                title: 'Emergency Contacts'
+            }
+        }
+    },
     render () {
         const numbers = telephone.map(tel =>
             <TelephoneEntry
