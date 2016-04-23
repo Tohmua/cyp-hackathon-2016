@@ -58,21 +58,25 @@ const TabView = React.createClass({
 					<View name="transitions-target" component={require('../views/transitions-target')} />
 				</ViewManager>
 				<UI.Tabs.Navigator>
+					<UI.Tabs.Tab onTap={this.selectTab.bind(this, 'mood')} selected={selectedTabSpan === 'mood'}>
+						<span className="Tabs-Icon Tabs-Icon--mood" />
+						<UI.Tabs.Label>Mood</UI.Tabs.Label>
+					</UI.Tabs.Tab>
+					<UI.Tabs.Tab onTap={this.selectTab.bind(this, 'events')} selected={selectedTabSpan === 'events'}>
+						<span className="Tabs-Icon Tabs-Icon--events" />
+						<UI.Tabs.Label>Events</UI.Tabs.Label>
+					</UI.Tabs.Tab>
+					<UI.Tabs.Tab onTap={this.selectTab.bind(this, 'help')} selected={selectedTabSpan === 'help'} id="tab-help">
+						<span className="Tabs-Icon Tabs-Icon--help" />
+						<UI.Tabs.Label>Help</UI.Tabs.Label>
+					</UI.Tabs.Tab>
 					<UI.Tabs.Tab onTap={this.selectTab.bind(this, 'lists')} selected={selectedTabSpan === 'lists'}>
 						<span className="Tabs-Icon Tabs-Icon--lists" />
 						<UI.Tabs.Label>Lists</UI.Tabs.Label>
 					</UI.Tabs.Tab>
-					<UI.Tabs.Tab onTap={this.selectTab.bind(this, 'form')} selected={selectedTabSpan === 'form'}>
-						<span className="Tabs-Icon Tabs-Icon--forms" />
-						<UI.Tabs.Label>Forms</UI.Tabs.Label>
-					</UI.Tabs.Tab>
-					<UI.Tabs.Tab onTap={this.selectTab.bind(this, 'controls')} selected={selectedTabSpan === 'controls'}>
-						<span className="Tabs-Icon Tabs-Icon--controls" />
-						<UI.Tabs.Label>Controls</UI.Tabs.Label>
-					</UI.Tabs.Tab>
-					<UI.Tabs.Tab onTap={this.selectTab.bind(this, 'transitions')} selected={selectedTabSpan === 'transitions'}>
-						<span className="Tabs-Icon Tabs-Icon--transitions" />
-						<UI.Tabs.Label>Transitions</UI.Tabs.Label>
+					<UI.Tabs.Tab onTap={this.selectTab.bind(this, 'rewards')} selected={selectedTabSpan === 'rewards'}>
+						<span className="Tabs-Icon Tabs-Icon--rewards" />
+						<UI.Tabs.Label>Rewards</UI.Tabs.Label>
 					</UI.Tabs.Tab>
 				</UI.Tabs.Navigator>
 			</Container>
