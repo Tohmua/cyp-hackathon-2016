@@ -97,25 +97,8 @@ var OnboardingView = React.createClass({
 	},
 
 	renderScanButton () {
-		var content = this.state.online ? (
-			<div key="online" className="onboarding-scan">
-				<Tappable loading={this.state.scanning} onTap={this.enableScanner} className="onboarding-scan__button">
-					{this.renderIcon(icons.qr)}
-				</Tappable>
-				<div className="onboarding-scan__text">Scan the QR code in your email</div>
-			</div>
-		) : (
-			<div key="offline" className="onboarding-scan">
-				<div className="onboarding-scan__button">
-					<div className="onboarding-scan__icon ion-wifi" />
-				</div>
-				<div className="onboarding-scan__text">Please find a data connection to register</div>
-			</div>
-		);
-
 		return (
 			<Transition transitionName="animation-fade" className="onboarding-scan-wrapper">
-				{content}
 			</Transition>
 		);
 	},
@@ -137,14 +120,13 @@ var OnboardingView = React.createClass({
 			<Container direction="column">
 				<OnboardingHeader />
 				<Container justify align="center" direction="column" className="onboarding-body">
-					{this.renderScanButton()}
+				Middle
 				</Container>
 				<Container justify align="center" direction="row" className="onboarding-footer">
 					{this.renderResendEmail()}
 					<Link to="app:main" transition="fade" className="onboarding-footer__button">Skip</Link>
 					{this.renderEnterCode()}
 				</Container>
-				{this.renderScanner()}
 			</Container>
 		);
 	}
