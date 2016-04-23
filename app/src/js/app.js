@@ -249,7 +249,6 @@ var TabViewController = React.createClass({
 					</Tabs.Tab>
 					<Tabs.Tab value="help">
 						<span className="Tabs-Icon Tabs-Icon--help" />
-						<Tabs.Label>Help</Tabs.Label>
 					</Tabs.Tab>
 					<Tabs.Tab value="lists">
 						<span className="Tabs-Icon Tabs-Icon--lists" />
