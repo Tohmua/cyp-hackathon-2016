@@ -1,28 +1,42 @@
-var Container = require('react-container');
+import React from 'react'
+import Container from 'react-container'
+import List from 'material-ui/lib/lists/list'
+import TelephoneEntry from '../../components/TelephoneEntry'
 
-import React from 'react';
-import List from 'material-ui/lib/lists/list';
-import ListItem from 'material-ui/lib/lists/list-item';
-import CommunicationCall from 'material-ui/lib/svg-icons/communication/call';
-import Colors from 'material-ui/lib/styles/colors';
+const telephone = [
+	{
+		number: 116123,
+		primaryText: "Samaritans",
+		secondaryText: "116 123"
+	},
+	{
+		number: 2345678,
+		primaryText: "Liam",
+		secondaryText: "Agile."
+	},
+	{
+		number: 116123,
+		primaryText: "Dr Roy",
+		secondaryText: "As seen on TV"
+	},
+]
 
-export default React.createClass({
-    render: () => (
-        <Container direction="column">
-            <Container fill justify="top" direction="column" scrollable color="white">
-            	<List>
-			      <a href="tel:116123"><ListItem
-			        rightIcon={<CommunicationCall color={Colors.lightGreen400} />}
-			        primaryText="Samaritans"
-			        secondaryText="116 123"
-			      /></a>
-			      <ListItem
-			        rightIcon={<CommunicationCall color={Colors.lightGreen400} />}
-			        primaryText="A&E"
-			      />
-			    </List>
+const TelephoneNumbers = React.createClass({
+    render () {
+        const numbers = telephone.map(tel =>
+            <TelephoneEntry
+                telephone={tel.number}
+                primaryText={tel.primaryText}
+                secondaryText={tel.secondaryText}
+            />
+        )
+
+        return (
+            <Container fill justify="top" scrollable className="light-background">
+        	   <List>{ numbers }</List>
             </Container>
-        </Container>
-    )
+        )
+    }
 })
 
+export default TelephoneNumbers
