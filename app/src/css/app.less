@@ -2,36 +2,19 @@
 // App
 // ==============================
 
-
-
-
 @import "ionicons/ionicons.less";
 @import "../../node_modules/touchstonejs/less/touchstone.less";
 @import "../../node_modules/react-container/less/component.less";
-@import "views/passcode.less";
-@import "views/person.less";
 
-@import "components.less";
-@import "demo.less";
-@import "icons.less";
+@import "android";
+@import "demo";
+@import "mixins";
+@import "variables";
 
+@import "components/index";
+@import "views/index";
 
-
-
-//
-// Mixins
-// ==============================
-
-
-
-
-// Avatars
-// ------------------------------
-
-.avatar(@size) {
-	.square(@size);
-	background: fade(@text-color, 10%);
-	border-radius: 50%;
-	border: 3px solid fade(@text-color, 20%);
-	padding: 3px;
+// Preload images
+img.preload {
+	display: none;
 }
