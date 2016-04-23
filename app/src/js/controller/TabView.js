@@ -7,9 +7,11 @@ import {
   ViewManager
 } from 'touchstonejs'
 
+let lastSelectedTab = 'lists'
+
 const TabView = React.createClass({
 	getInitialState () {
-		return { selectedTab: 'lists' }
+		return { selectedTab: lastSelectedTab }
 	},
 
 	onViewChange (nextView) {
