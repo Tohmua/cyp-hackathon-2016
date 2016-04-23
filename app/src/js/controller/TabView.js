@@ -63,17 +63,6 @@ var TabView = React.createClass({
 		});
 	},
 
-	renderAboutTab () {
-		if (!this.state.showAboutView) return <span />
-
-		return (
-			<Tabs.Tab value="about">
-				<span className="Tabs-Icon Tabs-Icon--about" />
-				<Tabs.Label>About</Tabs.Label>
-			</Tabs.Tab>
-		);
-	},
-
 	render () {
 		var selectedTab = this.state.selectedTab
 		if (selectedTab === 'me' || selectedTab === 'me-edit') {

@@ -10,12 +10,13 @@ import {
 	View
 } from './touchstone'
 
-import TabViewController from './controller/TabView'
+import MainViewController from './controller/MainView'
 
 import DataStore from './stores/DataStore'
 window.dataStore = new DataStore()
 
 var device = require('./lib/device')
+const AppContainer = document.getElementById('app')
 
 function hideSplashScreen() {
 	try {
@@ -34,48 +35,36 @@ function blockBodyTouchMove({ target }) {
 	e.preventDefault()
 }
 
-function bindBlockBodyTouchMove() {
-	window.addEventListener(
-    'touchmove',
-    blockBodyTouchMove
-  )
-}
-
-function unbindBlockBodyTouchMove() {
-	window.removeEventListener(
-    'touchmove',
-    blockBodyTouchMove
-  )
-}
-
 var lastWindowHeight = 0
 var keyboardIsVisible = false
 
 function updateAppHeight(h) {
 	if (typeof h === 'number') h += 'px'
-	document.getElementById('app').style.height = h
+	AppContainer.style.height = h
 }
 
 function fixWindowHeight () {
 	var resetAppHeight = function () {
-		if (keyboardIsVisible || window.innerHeight === lastWindowHeight) return;
-		lastWindowHeight = window.innerHeight;
-		updateAppHeight(lastWindowHeight);
-		// if the iOS in-call status bar is visible, this fixes the scrolling
-		// bug that's present on the document body.
-		if (document.body.scrollHeight > window.innerHeight) {
-			bindBlockBodyTouchMove();
-		} else {
-			unbindBlockBodyTouchMove();
-		}
+		if (keyboardIsVisible || window.innerHeight === lastWindowHeight)
+      return
+
+		lastWindowHeight = window.innerHeight
+		updateAppHeight(lastWindowHeight)
+
+		window[
+      document.body.scrollHeight > window.innerHeight
+        ? 'addEventListener' : 'removeEventListener'
+    ] ('touchmove', blockBodyTouchMove)
 	}
-	resetAppHeight();
-	setInterval(resetAppHeight, 250);
+
+	resetAppHeight()
+	setInterval(resetAppHeight, 250)
 }
 
 function keyboardShowHandler(e) {
-	keyboardIsVisible = true;
-	delete document.getElementById('app').style.height;
+	keyboardIsVisible = true
+
+	delete AppContainer.style.height
     console.log('Keyboard height is: ' + e.keyboardHeight + ', window height is: ' + window.innerHeight + ', last window height is: ' + lastWindowHeight);
 }
 
@@ -143,40 +132,22 @@ var App = React.createClass({
 					</ViewManager>
 				</div>
 			</div>
-		);
+		)
 	}
-});
+})
 
-var MainViewController = React.createClass({
-	render () {
-		return (
-			<Container>
-				<NavigationBar name="main" />
-				<ViewManager name="main" defaultView="tabs">
-					<View name="tabs" component={TabViewController} />
-					<View name="person" component={require('./views/people/person')} />
-					<View name="talk" component={require('./views/schedule/talk')} />
-				</ViewManager>
-			</Container>
-		);
-	}
-});
+const startApp = () => {
+	window.StatusBar && window.StatusBar.styleLightContent()
+	fixWindowHeight()
 
-function startApp () {
-	if (window.StatusBar) {
-		window.StatusBar.styleLightContent();
-	}
-	fixWindowHeight();
-	React.render(<App />, document.getElementById('app'));
+	React.render(<App />, AppContainer)
 }
 
-// native? wait for deviceready
 if (window.cordova) {
-	window.addEventListener('native.keyboardshow', keyboardShowHandler);
-	window.addEventListener('native.keyboardhide', keyboardHideHandler);
-	document.addEventListener('deviceready', startApp, false);
+	window.addEventListener('native.keyboardshow', keyboardShowHandler)
+	window.addEventListener('native.keyboardhide', keyboardHideHandler)
 
-// browser, start asap
+	document.addEventListener('deviceready', startApp, false)
 } else {
-	startApp();
+	startApp()
 }
