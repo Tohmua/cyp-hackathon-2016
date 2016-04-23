@@ -36,8 +36,11 @@ module.exports = React.createClass({
                     onSwipingRight={this.swipingRight}
                     onSwipingDown={this.swipingDown}
                     onSwipingLeft={this.swipingLeft}>
+                        <div id="goodResponse" style={{opacity: this.state.right }} />
+                        <div id="badResponse" style={{opacity: this.state.left }} />
+                        <div id="mehResponse" style={{opacity: this.state.top }} />
                         <div className="MeRegistration__heading">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
+                            { this.state.question }
                         </div>
                         <p className="MeRegistration__intro">Swipe right for yes</p>
                         <p className="MeRegistration__intro">Swipe left for no</p>
@@ -49,16 +52,84 @@ module.exports = React.createClass({
         return content;
     },
 
-    swipingRight: function (e) {
-        console.log(e);
+    swipingRight: function (e, right) {
+        this.setState({ left: 0 })
+        this.setState({ top: 0 })
+
+        if (this.state.question !== 'Done') {
+            this.setState({ right: this.state.right + 0.025 })
+        }
+
+        if (this.state.right >= 1) {
+            this.setState({ right: 0 })
+
+            const question = this.state.questions.pop()
+
+            if (typeof question !== 'undefined') {
+                this.setState({ question: question})
+            } else {
+                this.setState({ question: 'Done'})
+            }
+
+        }
     },
 
-    swipingDown: function (e) {
-        console.log(e);
+    swipingDown: function (e, top) {
+        this.setState({ left: 0 })
+        this.setState({ right: 0 })
+
+        if (this.state.question !== 'Done') {
+            this.setState({ top: this.state.top + 0.025 })
+        }
+
+        if (this.state.top >= 1) {
+            this.setState({ top: 0 })
+
+            const question = this.state.questions.pop()
+
+            if (typeof question !== 'undefined') {
+                this.setState({ question: question})
+            } else {
+                this.setState({ question: 'Done'})
+            }
+
+        }
     },
 
-    swipingLeft: function (e) {
-        console.log(e);
+    swipingLeft: function (e, left) {
+        this.setState({ right: 0 })
+        this.setState({ top: 0 })
+
+        if (this.state.question !== 'Done') {
+            this.setState({ left: this.state.left + 0.025 })
+        }
+
+        if (this.state.left >= 1) {
+            this.setState({ left: 0 })
+
+            const question = this.state.questions.pop()
+
+            if (typeof question !== 'undefined') {
+                this.setState({ question: question})
+            } else {
+                this.setState({ question: 'Done'})
+            }
+
+        }
+    },
+
+    getInitialState() {
+        return {
+            right: 0,
+            left: 0,
+            top: 0,
+            question: 'Lorem ipsum dolor sit amet?',
+            questions: [
+                'Consectetur adipiscing elit?',
+                'Eed do eiusmod tempor incididunt ut?',
+                'Labore et dolore magna aliqua?'
+            ]
+        }
     }
 });
 
