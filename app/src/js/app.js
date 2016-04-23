@@ -10,7 +10,7 @@ import {
 	View
 } from './touchstone'
 
-import TabViewController from './controller/TabView'
+import MainViewController from './controller/MainView'
 
 import DataStore from './stores/DataStore'
 window.dataStore = new DataStore()
@@ -132,24 +132,9 @@ var App = React.createClass({
 					</ViewManager>
 				</div>
 			</div>
-		);
+		)
 	}
-});
-
-var MainViewController = React.createClass({
-	render () {
-		return (
-			<Container>
-				<NavigationBar name="main" />
-				<ViewManager name="main" defaultView="tabs">
-					<View name="tabs" component={TabViewController} />
-					<View name="person" component={require('./views/people/person')} />
-					<View name="talk" component={require('./views/schedule/talk')} />
-				</ViewManager>
-			</Container>
-		);
-	}
-});
+})
 
 const startApp = () => {
 	window.StatusBar && window.StatusBar.styleLightContent()
