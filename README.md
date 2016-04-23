@@ -6,6 +6,7 @@
 * Ask if you go to cancel
   * Thought provoking question
   * Different questions each time
+  * "Am I trying to avoid this?"
   * "Dont want to talk about it" option
 * After event push notification
   * "You didn't cancel this event, if you attended how did this make you feel?"
