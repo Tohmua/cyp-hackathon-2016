@@ -5,11 +5,11 @@ import React, {
   StyleSheet,
   Text,
   View,
-} from 'react-native';
+} from 'react-native'
 
 const MOCKED_MOVIES_DATA = [
   {title: 'Title', year: '2015', posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'}},
-];
+]
 
 const styles = StyleSheet.create({
   container: {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     width: 53,
     height: 81,
   },
-});
+})
 
 export default class Root extends Component {
 	render() {
@@ -33,6 +33,6 @@ export default class Root extends Component {
 	        <Text>{movie.year}</Text>
 	        <Image source={{uri: movie.posters.thumbnail}} />
 	      </View>
-	    );
+	    )
 	}
 }
