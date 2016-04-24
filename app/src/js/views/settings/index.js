@@ -18,7 +18,7 @@ const Settings = React.createClass({
     render: () => (
         <Container fill className="light-background" scrollable justify="top" direction="column">
             <List>
-                <ListItem><TextField floatingLabelText="Name" /></ListItem>
+                <ListItem><TextField floatingLabelText="Name" value="Gwen"/></ListItem>
                 <ListItem><TextField floatingLabelText="Code" /></ListItem>
             </List>
             <List>
