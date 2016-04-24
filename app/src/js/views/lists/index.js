@@ -21,7 +21,7 @@ const items = [
   ['Are you hydrated?', 'Have a glass of water.'],
   ['Have you eaten in the past three hours?', 'If not, get some food — something with protein.'],
   ['Have you showered in the past day?', 'Take a shower right now.'],
-  ['If daytime: are you dressed?', 'If not, put on clean clothes that aren’t pyjamas.'],
+  ['If daytime: are you dressed?', 'If not, put on clean clothes that aren\'t pyjamas.'],
   ['Are you fatigued but not sleeping?', 'Close your eyes for fifteen minutes. No screens.'],
   ['Have you stretched your legs in the past day?', 'Go for a brisk walk outside.'],
   ['Have you been kind in the past day?', 'Do so: tell someone why they\'re wonderful.'],
