@@ -3,6 +3,8 @@ import Container from 'react-container'
 import List from 'material-ui/lib/lists/list'
 import TelephoneEntry from '../../components/TelephoneEntry'
 import navigation from '../../lib/navigation'
+import { ListItem } from 'material-ui'
+import Colors from 'material-ui/lib/styles/colors'
 
 const telephone = [
 	{
@@ -35,7 +37,11 @@ const TelephoneNumbers = React.createClass({
 
         return (
             <Container fill justify="start" scrollable className="light-background">
-        	   <List>{ numbers }</List>
+                <List style={{ backgroundColor: Colors.lightGreen200 }}>
+                    <ListItem>Hey, hope you're okay</ListItem>
+                    <ListItem>Here's your saved numbers, if you want to talk</ListItem>
+                </List>
+               <List>{ numbers }</List>
             </Container>
         )
     }
