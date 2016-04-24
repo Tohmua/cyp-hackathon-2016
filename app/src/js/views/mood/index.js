@@ -59,7 +59,7 @@ module.exports = React.createClass({
         }
 
         if (this.state.question !== 'Done' && this.currentlySwiping()) {
-            this.setState({ right: (right / 200) })
+            this.setState({ right: (right / 400) })
         }
 
         if (this.state.right >= 1) {
