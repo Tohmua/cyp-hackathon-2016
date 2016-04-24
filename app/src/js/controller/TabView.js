@@ -83,6 +83,7 @@ var TabView = React.createClass({
 					<View name="lists" component={ require('../views/lists') } />
 					<View name="rewards" component={ require('../views/rewards') } />
 					<View name="settings" component={ require('../views/settings') } />
+					<View name="addevent" component={ require('../views/addevent') } />
 				</ViewManager>
 
 				<Tabs.Navigator value={selectedTab} onChange={this.selectTab}>
