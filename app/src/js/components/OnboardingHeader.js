@@ -9,8 +9,8 @@ module.exports = React.createClass({
 		return (
 			<Container align="center" justify="center" direction="column" className="onboarding-header">
 				<img src="./img/logo-mark.png" className="onboarding-logo" />
-				<div className="onboarding-heading onboarding-heading-1">Fancy App Title</div>
-				<div className="onboarding-heading onboarding-heading-2">Fancy App Subtitle</div>
+				<div className="onboarding-heading onboarding-heading-1">Foundations</div>
+				<div className="onboarding-heading onboarding-heading-2">Porticus</div>
 			</Container>
 		);
 	}
