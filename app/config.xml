@@ -29,10 +29,13 @@
 		<splash src="resources/splash/1242x2208.png" density="mdpi" />
 		<splash src="resources/splash/1242x2208.png" density="hdpi" />
 		<splash src="resources/splash/1242x2208.png" density="xhdpi" />
-	</platform>
+
+        <access origin="tel:*" launch-external="yes" />
+    </platform>
 
 	<!-- IOS -->
 	<platform name="ios">
+        <access origin="tel:*" launch-external="yes" />
 	</platform>
 
 	<!-- PLUGINS -->
