@@ -141,7 +141,7 @@ module.exports = React.createClass({
                 'Would Demi Lovato avoid this?',
                 'Would Demi Lovato worry about this?',
                 'Is there another way of looking at this?',
-                'Have you checked My Steps?'
+                'Have I checked My Steps?'
             ],
             swiping: false
         }
