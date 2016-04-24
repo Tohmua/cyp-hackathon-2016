@@ -10,7 +10,8 @@ import {
 } from '../touchstone'
 
 
-var lastSelectedTab = 'me';
+var lastSelectedTab = 'events'
+
 var TabView = React.createClass({
 	statics: navigation('Hello'),
 	contextTypes: { dataStore: React.PropTypes.object.isRequired },
@@ -100,7 +101,7 @@ var TabView = React.createClass({
 					</Tabs.Tab>
 					<Tabs.Tab value="lists">
 						<span className="Tabs-Icon Tabs-Icon--lists" />
-						<Tabs.Label>How are you?</Tabs.Label>
+						<Tabs.Label>My Steps</Tabs.Label>
 					</Tabs.Tab>
 					<Tabs.Tab value="rewards">
 						<span className="Tabs-Icon Tabs-Icon--rewards" />

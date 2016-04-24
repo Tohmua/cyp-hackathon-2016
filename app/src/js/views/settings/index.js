@@ -13,16 +13,14 @@ const switches = [
     ['Ask for cancellation reasons', 'When I cancel events']
 ].map(([primaryText, secondaryText]) => ({ primaryText, secondaryText }))
 
-
 const Settings = React.createClass({
     statics: navigation('Settings', true),
     render: () => (
         <Container fill className="light-background" scrollable justify="top" direction="column">
             <List>
                 <ListItem><TextField floatingLabelText="Name" /></ListItem>
-                <ListItem><TextField floatingLabelText="Code" type="password"/></ListItem>
+                <ListItem><TextField floatingLabelText="Code" /></ListItem>
             </List>
-            <Divider />
             <List>
                 { switches.map((item, i) => 
                     <ListItem key={ i } { ... item } disabled={ false } rightToggle={<Toggle />} />
