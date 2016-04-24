@@ -31,7 +31,7 @@ module.exports = React.createClass({
     render () {
         var content =
             <Container direction="column">
-                <Container fill align="center" justify="center" direction="column" scrollable className="MeRegistration__body">
+                <Container fill align="center" justify="center" direction="column" className="MeRegistration__body">
                     <Swipeable className="swipeable"
                     onSwipingRight={this.swipingRight}
                     onSwipingDown={this.swipingDown}
@@ -52,16 +52,33 @@ module.exports = React.createClass({
         return content;
     },
 
+    currentlySwiping: function () {
+        return this.state.swiping
+    },
+
+    startSwiping: function () {
+        this.setState({ swiping: true })
+    },
+
+    stopSwiping: function () {
+        this.setState({ swiping: false })
+    },
+
     swipingRight: function (e, right) {
         this.setState({ left: 0 })
         this.setState({ top: 0 })
 
-        if (this.state.question !== 'Done') {
-            this.setState({ right: this.state.right + 0.025 })
+        if (right < 20) {
+            this.startSwiping()
+        }
+
+        if (this.state.question !== 'Done' && this.currentlySwiping()) {
+            this.setState({ right: this.state.right + (2 / right) })
         }
 
         if (this.state.right >= 1) {
             this.setState({ right: 0 })
+            this.stopSwiping()
 
             const question = this.state.questions.pop()
 
@@ -78,12 +95,17 @@ module.exports = React.createClass({
         this.setState({ left: 0 })
         this.setState({ right: 0 })
 
-        if (this.state.question !== 'Done') {
-            this.setState({ top: this.state.top + 0.025 })
+        if (top < 20) {
+            this.startSwiping()
+        }
+
+        if (this.state.question !== 'Done' && this.currentlySwiping()) {
+            this.setState({ top: this.state.top + (2 / top) })
         }
 
         if (this.state.top >= 1) {
             this.setState({ top: 0 })
+            this.stopSwiping()
 
             const question = this.state.questions.pop()
 
@@ -100,12 +122,17 @@ module.exports = React.createClass({
         this.setState({ right: 0 })
         this.setState({ top: 0 })
 
-        if (this.state.question !== 'Done') {
-            this.setState({ left: this.state.left + 0.025 })
+        if (left < 20) {
+            this.startSwiping()
+        }
+
+        if (this.state.question !== 'Done' && this.currentlySwiping()) {
+            this.setState({ left: this.state.left + (2 / left) })
         }
 
         if (this.state.left >= 1) {
             this.setState({ left: 0 })
+            this.stopSwiping()
 
             const question = this.state.questions.pop()
 
@@ -128,7 +155,8 @@ module.exports = React.createClass({
                 'Consectetur adipiscing elit?',
                 'Eed do eiusmod tempor incididunt ut?',
                 'Labore et dolore magna aliqua?'
-            ]
+            ],
+            swiping: false
         }
     }
 });
