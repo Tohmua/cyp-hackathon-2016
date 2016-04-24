@@ -11,6 +11,7 @@ var Transitions = {
 			vm = view.shift();
 		}
 		view = view[0];
+
 		this.context.app.viewManagers[vm].transitionTo(view, opts);
 	}
 };
