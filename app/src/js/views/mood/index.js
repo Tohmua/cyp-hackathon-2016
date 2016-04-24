@@ -59,7 +59,7 @@ module.exports = React.createClass({
         }
 
         if (this.state.question !== 'Done' && this.currentlySwiping()) {
-            this.setState({ right: this.state.right + (right / 100) })
+            this.setState({ right: (right / 200) })
         }
 
         if (this.state.right >= 1) {
@@ -86,7 +86,7 @@ module.exports = React.createClass({
         }
 
         if (this.state.question !== 'Done' && this.currentlySwiping()) {
-            this.setState({ top: this.state.top + (top / 100) })
+            this.setState({ top: (top / 200) })
         }
 
         if (this.state.top >= 1) {
@@ -113,7 +113,7 @@ module.exports = React.createClass({
         }
 
         if (this.state.question !== 'Done' && this.currentlySwiping()) {
-            this.setState({ left: (left / 100) })
+            this.setState({ left: (left / 200) })
         }
 
         if (this.state.left >= 1) {
