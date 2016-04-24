@@ -6,6 +6,9 @@ import Divider from 'material-ui/lib/divider';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 var { animation, Link, Transitions } = require('../../touchstone');
+import Badge from 'material-ui/lib/badge';
+import IconButton from 'material-ui/lib/icon-button';
+import NotificationsIcon from 'material-ui/lib/svg-icons/social/notifications';
 
 const switches = [
     ['Allow notifications'],
@@ -16,26 +19,13 @@ const switches = [
 const Settings = React.createClass({
     statics: navigation('Add Event', false, true),
 
-    getInitialState() {
-        return {
-            value: 0
-        }
-    },
-
      render: () => (
         <Container direction="column">
-            <Container fill className="light-background" scrollable justify="top" direction="column">
+            <Container fill className="light-background" scrollable direction="column">
                 <List>
                     <ListItem><TextField floatingLabelText="Event Name" /></ListItem>
-                    <ListItem>
-                    <SelectField value='1'>
-                      <MenuItem value={1} primaryText="Never"/>
-                      <MenuItem value={2} primaryText="Every Night"/>
-                      <MenuItem value={3} primaryText="Weeknights"/>
-                      <MenuItem value={4} primaryText="Weekends"/>
-                      <MenuItem value={5} primaryText="Weekly"/>
-                    </SelectField>
-                    </ListItem>
+                    <ListItem><TextField floatingLabelText="Date" /></ListItem>
+                    <ListItem><TextField floatingLabelText="Time" /></ListItem>
                 </List>
             </Container>
             <Container align="center" justify="center" className="light-background" style={{ padding: '10px' }}>
