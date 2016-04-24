@@ -16,7 +16,7 @@ module.exports = React.createClass({
     statics: navigation('Mood Tracker'),
     render () {
         var content =
-            <Container direction="column">
+            <Container direction="column" className="light-background">
                 <Container fill align="center" justify="center" direction="column" className="MeRegistration__body">
                     <Swipeable className="swipeable"
                     onSwipingRight={this.swipingRight}
@@ -28,9 +28,9 @@ module.exports = React.createClass({
                         <div className="MeRegistration__heading">
                             { this.state.question }
                         </div>
-                        <p className="MeRegistration__intro">Swipe right for yes</p>
-                        <p className="MeRegistration__intro">Swipe left for no</p>
-                        <p className="MeRegistration__intro">Swipe down for meh</p>
+                        <p className="">Swipe right for yes</p>
+                        <p className="">Swipe left for no</p>
+                        <p className="">Swipe down for meh</p>
                     </Swipeable>
                 </Container>
             </Container>
