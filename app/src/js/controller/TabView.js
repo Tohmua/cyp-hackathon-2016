@@ -73,13 +73,16 @@ var TabView = React.createClass({
 
 		return (
 			<Container>
-				<ViewManager ref="vm" name="tabs" defaultView={this.state.selectedTab} onViewChange={this.onViewChange}>
-					<View name="mood" component={require('../views/mood')} />
-					<View name="events" component={require('../views/events')} />
-					<View name="help" component={require('../views/help')} />
-					<View name="lists" component={require('../views/lists')} />
-					<View name="rewards" component={require('../views/rewards')} />
+				<ViewManager ref="vm" name="tabs"
+            defaultView={this.state.selectedTab}
+            onViewChange={this.onViewChange}>
+					<View name="mood" component={ require('../views/mood') } />
+					<View name="events" component={ require('../views/events') } />
+					<View name="help" component={ require('../views/help') } />
+					<View name="lists" component={ require('../views/lists') } />
+					<View name="rewards" component={ require('../views/rewards') } />
 				</ViewManager>
+
 				<Tabs.Navigator value={selectedTab} onChange={this.selectTab}>
 					<Tabs.Tab value="mood">
 						<span className="Tabs-Icon Tabs-Icon--mood" />

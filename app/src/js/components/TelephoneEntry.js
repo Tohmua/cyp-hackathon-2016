@@ -10,7 +10,7 @@ const TelephoneEntry = React.createClass({
 			<ListItem
 		        rightIcon={<CommunicationCall color={Colors.lightGreen400} />}
 		        primaryText={ this.props.primaryText }
-		        secondaryText={ this.props.secondaryText || ''}
+		        secondaryText={ this.props.secondaryText || '' }
 	      	/>
 	     </a>
 	}
