@@ -187,7 +187,7 @@ var NavigationBar = React.createClass({
 		});
 		return (
 			<div className={className}>
-				{this.renderLeftButton()}
+				<Link to="tabs:rewards" transition="fade">{this.renderLeftButton()}</Link>
 				{this.renderTitle()}
 				<Link to="tabs:settings" transition="fade">{this.renderRightButton()}</Link>
 			</div>

@@ -1,15 +1,13 @@
 import Transitions from '../touchstone/Transitions'
 
-const navigation = (pageName) => {
+const navigation = (pageName, isChildPage) => {
     return {
         navigationBar: 'main',
         getNavigation (props) {
             return {
                 title: pageName,
-                rightLabel: 'Settings',
-                rightAction: function () {
-                    Transitions.transitionTo('main:settings')
-                }
+                leftLabel: isChildPage ? 'Home' : '', 
+                rightLabel: ! isChildPage ? 'Settings' : '',
             }
         }
     }
