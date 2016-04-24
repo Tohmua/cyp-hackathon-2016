@@ -1,4 +1,5 @@
 import React from 'react';
+import Container from 'react-container'
 import GridList from 'material-ui/lib/grid-list/grid-list';
 import GridTile from 'material-ui/lib/grid-list/grid-tile';
 import StarBorder from 'material-ui/lib/svg-icons/toggle/star-border';
@@ -66,24 +67,23 @@ const tilesData = [
 const Rewards = React.createClass({
     statics: navigation('Rewards'),
     render () {
-        return <div style={styles.root}>
-            <GridList cols="4" rows="12"
-                      cellHeight={100}
-                      style={styles.gridList}
-            >
-                {tilesData.map(tile => (
-                    <GridTile
-                        key={tile.img}
-                        title={tile.title}
-                        style={styles.tile}
+        return <Container fill justify="top" scrollable className="light-background">
+                    <GridList cols="4" rows="12"
+                              cellHeight={100}
+                              style={styles.gridList}
                     >
-                        <img src={tile.img} onClick={function () {
-                        alert(tile.title)
-                    }}/>
-                    </GridTile>
-                ))}
-            </GridList>
-        </div>
+                        {tilesData.map(tile => (
+                            <GridTile
+                                key={tile.img}
+                                style={styles.tile}
+                            >
+                                <img src={tile.img} onClick={function () {
+                                alert(tile.title)
+                            }}/>
+                            </GridTile>
+                        ))}
+                    </GridList>
+                </Container>
     }
 });
 
