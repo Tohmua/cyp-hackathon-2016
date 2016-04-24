@@ -34,7 +34,7 @@ const TelephoneNumbers = React.createClass({
         )
 
         return (
-            <Container fill justify="top" scrollable className="light-background">
+            <Container fill justify="start" scrollable className="light-background">
         	   <List>{ numbers }</List>
             </Container>
         )

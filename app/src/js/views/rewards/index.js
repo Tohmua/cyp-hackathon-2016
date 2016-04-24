@@ -67,8 +67,9 @@ const tilesData = [
 const Rewards = React.createClass({
     statics: navigation('Rewards'),
     render () {
-        return <Container fill justify="top" scrollable className="light-background">
-                    <GridList cols="4" rows="12"
+        return <Container fill justify="start" scrollable className="light-background">
+                    <GridList cols={4}
+                              rows={12}
                               cellHeight={100}
                               style={styles.gridList}
                     >
