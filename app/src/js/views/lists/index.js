@@ -16,13 +16,23 @@ import { EventEmitter } from 'events'
 const emitter = new EventEmitter()
 
 const items = [
-  ['Are you hydrated?', 'Drink a glass of water.'],
-  [ 'Have you not eaten for a while?', 'Not just junk food. Eat something substantial.'],
-  [ 'Have you showered today?', 'Take some time to do that right now.'],
-  [ 'If day time, are you dressed?', 'Get some clean clothes that aren\'t pyjamas.'],
-  [ 'If night time, can you not sleep?', 'Switch off your phone and other screens for a while.'],
-  [ 'Have you stretched your legs in the past day?', 'Go for a walk and get a change of scenery.'],
-  [ 'Do you feel ineffective?', 'Pick a small job - responding to an email, packing a bag, emptying a bin - and do it.']
+  ['Are you hydrated?', 'Have a glass of water.'],
+  ['Have you eaten in the past three hours?', 'If not, get some food — something with protein.'],
+  ['Have you showered in the past day?', 'Take a shower right now.'],
+  ['If daytime: are you dressed?', 'If not, put on clean clothes that aren’t pyjamas.'],
+  ['Are you fatigued but not sleeping?', 'Close your eyes for fifteen minutes. No screens.'],
+  ['Have you stretched your legs in the past day?', 'Go for a brisk walk outside.'],
+  ['Have you been kind in the past day?', 'Do so: tell someone why they\'re wonderful.'],
+  ['Have you moved to music in the past day?', 'Jog with music, or dance for a while.'],
+  ['Would physical contact help?', 'Ask someone for a hug, or for time with a pet.'],
+  ['Do you feel ineffective?', 'Do a small job. Respond to that email.'],
+  ['Do you feel unattractive?', 'Take a picture, and let your friends tell you otherwise.'],
+  ['Do you feel paralysed by indecision?', 'Take a step back, and do some planning.'],
+  ['Have you seen a therapist recently?', 'Visit a therapist and talk through this.'],
+  ['Are you physically/emotionally stressed?', 'Take time away from that. Relax.'],
+  ['Have you changed medications recently?', 'Talk to your doctor if this feeling continues.'],
+  ['Have you waited a week?', 'Take some time. See if you still feel the same way.'],
+  ['You are stronger than you think.', 'You’ve made it this far, and you will make it through.']
 ].map(([primaryText, secondaryText]) => ({ primaryText, secondaryText }))
 
 export default React.createClass({
@@ -36,10 +46,10 @@ export default React.createClass({
 
   render () {
     return (
-      <Container direction="column">
+      <Container direction="column" className="light-background" scrollable>
         <List>
           { items.map((item, i) =>
-              <ListItem key={ i } { ... item } />
+              <ListItem key={ i } { ... item } disabled={ false } />
             )
           }
         </List>
