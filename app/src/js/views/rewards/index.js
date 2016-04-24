@@ -17,43 +17,100 @@ const styles = {
 
 const tilesData = [
     {
-        img: '../../../img/icons/calendar.png',
+        img: '../../../img/rosette/rosette-01.png',
         title: '5 day streak',
     },
     {
-        img: '../../../img/icons/cogwheel.png',
+        img: '../../../img/rosette/rosette-02.png',
         title: '10 day streak',
     },
     {
-        img: '../../../img/icons/medal.png',
+        img: '../../../img/rosette/rosette-03.png',
         title: '15 day streak',
     },
     {
-        img: '../../../img/icons/megaphone.png',
+        img: '../../../img/rosette/rosette-04.png',
         title: '20 day streak',
     },
     {
-        img: '../../../img/icons/multimedia.png',
+        img: '../../../img/rosette/rosette-05.png',
         title: 'Completed a ...',
     },
     {
-        img: '../../../img/icons/orientation.png',
+        img: '../../../img/rosette/rosette-06.png',
         title: 'temp',
     },
     {
-        img: '../../../img/icons/people.png',
+        img: '../../../img/rosette/rosette-01.png',
+        title: '5 day streak',
+    },
+    {
+        img: '../../../img/rosette/rosette-02.png',
+        title: '10 day streak',
+    },
+    {
+        img: '../../../img/rosette/rosette-03.png',
+        title: '15 day streak',
+    },
+    {
+        img: '../../../img/rosette/rosette-04.png',
+        title: '20 day streak',
+    },
+    {
+        img: '../../../img/rosette/rosette-05.png',
+        title: 'Completed a ...',
+    },
+    {
+        img: '../../../img/rosette/rosette-06.png',
         title: 'temp',
     },
     {
-        img: '../../../img/icons/people-1.png',
-        title: 'temp',
+        img: '../../../img/rosette/rosette-01.png',
+        title: '5 day streak',
     },
     {
-        img: '../../../img/icons/ring.png',
-        title: 'temp',
+        img: '../../../img/rosette/rosette-02.png',
+        title: '10 day streak',
     },
     {
-        img: '../../../img/icons/signature.png',
+        img: '../../../img/rosette/rosette-03.png',
+        title: '15 day streak',
+    },
+    {
+        img: '../../../img/rosette/rosette-04.png',
+        title: '20 day streak',
+    },
+    {
+        img: '../../../img/rosette/rosette-05.png',
+        title: 'Completed a ...',
+    },
+    {
+        img: '../../../img/rosette/rosette-06.png',
+        title: 'temp',
+    },
+
+    {
+        img: '../../../img/rosette/rosette-01.png',
+        title: '5 day streak',
+    },
+    {
+        img: '../../../img/rosette/rosette-02.png',
+        title: '10 day streak',
+    },
+    {
+        img: '../../../img/rosette/rosette-03.png',
+        title: '15 day streak',
+    },
+    {
+        img: '../../../img/rosette/rosette-04.png',
+        title: '20 day streak',
+    },
+    {
+        img: '../../../img/rosette/rosette-05.png',
+        title: 'Completed a ...',
+    },
+    {
+        img: '../../../img/rosette/rosette-06.png',
         title: 'temp',
     },
 ];
@@ -65,11 +122,11 @@ const Rewards = React.createClass({
       return (
         <Container fill justify="start" scrollable className="light-background">
           <GridList cols={4} rows={12} cellHeight={100} style={styles.gridList}>
-            { tilesData.map(tile => (
+            { tilesData.map((tile, i) => (
                 <GridTile
                     onTouchTap={ () => this.handleClick(tile.title) }
                     onClick={ () => this.handleClick(tile.title) }
-                    key={ tile.img }
+                    key={ i }
                     style={ styles.tile }>
                     <img src={ tile.img } />
                 </GridTile>
