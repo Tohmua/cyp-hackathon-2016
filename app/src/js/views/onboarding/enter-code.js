@@ -80,7 +80,7 @@ module.exports = React.createClass({
 				<Container justify align="center" direction="column">
 					<form onSubmit={this.handleFormSubmission} action="#" className="onboarding-form" noValidate>
 						<div className="onboarding-form__section onboarding-form__section--field">
-							<input type="text" pattern="[0-9]" onChange={this.handleFormInput} value={this.state.input} placeholder="Enter Code" className="onboarding-form__input" disabled={this.state.feedback === 'sent'} />
+							<input type="number" onChange={this.handleFormInput} value={this.state.input} placeholder="Enter Code" className="onboarding-form__input" disabled={this.state.feedback === 'sent'} />
 						</div>
 						<div className="onboarding-form__section onboarding-form__section--button">
 							<button type="submit" className={submitButtonClass} disabled={submitIsDisabled} />
