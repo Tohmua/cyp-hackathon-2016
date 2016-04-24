@@ -21,6 +21,7 @@
     "react-swipeable": "^3.3.1",
     "react-tappable": "^0.5.1",
     "react-timers": "^3.1.0",
+    "shelljs": "^0.6.0",
     "touchstonejs": "git+https://github.com/touchstonejs/touchstonejs.git#3a0d5dbb2a3ee987aefe9d306855a60b0577866b",
     "tween.js": "^0.14.0"
   },
