@@ -17,8 +17,6 @@ export default React.createClass({
 				<NavigationBar name="main" />
 				<ViewManager name="main" defaultView="tabs">
 					<View name="tabs" component={ TabViewController } />
-					<View name="person" component={require('../views/people/person')} />
-					<View name="talk" component={require('../views/schedule/talk')} />
 				</ViewManager>
 			</Container>
 		)
