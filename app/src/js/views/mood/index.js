@@ -136,11 +136,12 @@ module.exports = React.createClass({
             right: 0,
             left: 0,
             top: 0,
-            question: 'Lorem ipsum dolor sit amet?',
+            question: 'Am I avoiding this?',
             questions: [
-                'Consectetur adipiscing elit?',
-                'Eed do eiusmod tempor incididunt ut?',
-                'Labore et dolore magna aliqua?'
+                'Would Demi Lovato avoid this?',
+                'Would Demi Lovato worry about this?',
+                'Is there another way of looking at this?',
+                'Have you checked My Steps?'
             ],
             swiping: false
         }
