@@ -67,8 +67,8 @@ const Rewards = React.createClass({
           <GridList cols={4} rows={12} cellHeight={100} style={styles.gridList}>
             { tilesData.map(tile => (
                 <GridTile
-                    onTouchTap={ function () {this.handleClick(tile.title)} }
-                    onClick={ function () {this.handleClick(tile.title)} }
+                    onTouchTap={ () => this.handleClick(tile.title) }
+                    onClick={ () => this.handleClick(tile.title) }
                     key={ tile.img }
                     style={ styles.tile }>
                     <img src={ tile.img } />
