@@ -99,7 +99,7 @@ var TabView = React.createClass({
 					</Tabs.Tab>
 					<Tabs.Tab value="lists">
 						<span className="Tabs-Icon Tabs-Icon--lists" />
-						<Tabs.Label>Lists</Tabs.Label>
+						<Tabs.Label>How are you?</Tabs.Label>
 					</Tabs.Tab>
 					<Tabs.Tab value="rewards">
 						<span className="Tabs-Icon Tabs-Icon--rewards" />
