@@ -6,6 +6,8 @@ import Divider from 'material-ui/lib/divider';
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 
+import navigation from '../../lib/navigation'
+
 import {
   animation,
   Link,
@@ -42,7 +44,7 @@ export default React.createClass({
     animation.Mixins.ScrollContainerToTop
   ],
 
-  statics: { navigationBar: 'main' },
+    statics: navigation('Lists'),
 
   render () {
     return (

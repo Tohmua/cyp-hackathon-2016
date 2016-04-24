@@ -3,6 +3,7 @@ var Sentry = require('react-sentry');
 var React = require('react');
 var { animation, Link, Transitions } = require('../../touchstone');
 var Swipeable = require('react-swipeable')
+import navigation from '../../lib/navigation'
 
 var EventEmitter = require('events').EventEmitter;
 var emitter = new EventEmitter();
@@ -12,22 +13,7 @@ module.exports = React.createClass({
     contextTypes: { dataStore: React.PropTypes.object.isRequired },
     mixins: [Sentry(), Transitions, animation.Mixins.ScrollContainerToTop],
 
-    statics: {
-        navigationBar: 'main',
-        getNavigation (props) {
-            // var name = props.me && props.me.name
-
-            return {
-                leftIcon: 'ion-android-menu',
-                leftAction: emitter.emit.bind(emitter, 'navigationBarLeftAction'),
-                rightAction: emitter.emit.bind(emitter, 'navigationBarRightAction'),
-                // rightButtonDisabled: !name,
-                rightLabel: name ? 'Edit' : '',
-                title: 'Mood Tracker'
-            }
-        }
-    },
-
+    statics: navigation('Mood Tracker'),
     render () {
         var content =
             <Container direction="column">

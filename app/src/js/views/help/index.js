@@ -2,6 +2,7 @@ import React from 'react'
 import Container from 'react-container'
 import List from 'material-ui/lib/lists/list'
 import TelephoneEntry from '../../components/TelephoneEntry'
+import navigation from '../../lib/navigation'
 
 const telephone = [
 	{
@@ -22,14 +23,7 @@ const telephone = [
 ]
 
 const TelephoneNumbers = React.createClass({
-    statics: {
-        navigationBar: 'main',
-        getNavigation (props) {
-            return {
-                title: 'Emergency Contacts'
-            }
-        }
-    },
+    statics: navigation('Emergency Contacts'),
     render () {
         const numbers = telephone.map(tel =>
             <TelephoneEntry
