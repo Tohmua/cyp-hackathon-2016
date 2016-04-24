@@ -20,8 +20,29 @@
 
 .light-background {
     background-color: @text-color;
+    color: @charcoal;
 }
 
+.primary-background {
+    background-color: @body-bg;
+}
+
+.trophy {
+    max-width: 33%;
+    min-width: 33%;
+    text-align: center;
+    padding: 2rem 0;
+    color: @charcoal;
+    display: inline-block
+}
+
+.trophy-complete {
+
+}
+
+.trophy-incomplete {
+    color: lighten(@charcoal, 70%);
+}
 
 @import "about";
 @import "announcement";

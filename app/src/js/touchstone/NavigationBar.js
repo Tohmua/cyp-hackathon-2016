@@ -2,6 +2,7 @@ var classNames = require('classnames');
 var React = require('react/addons');
 var Tappable = require('react-tappable');
 var Transition = React.addons.CSSTransitionGroup;
+import Link from './Link'
 
 var defaultControllerState = {
 	direction: 0,
@@ -188,7 +189,7 @@ var NavigationBar = React.createClass({
 			<div className={className}>
 				{this.renderLeftButton()}
 				{this.renderTitle()}
-				{this.renderRightButton()}
+				<Link to="tabs:settings" transition="fade">{this.renderRightButton()}</Link>
 			</div>
 		);
 	}

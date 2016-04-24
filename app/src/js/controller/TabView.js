@@ -1,6 +1,6 @@
 import React from 'react'
 import Sentry from 'react-sentry'
-
+import navigation from '../lib/navigation'
 import {
 	Container,
 	NavigationBar,
@@ -12,6 +12,7 @@ import {
 
 var lastSelectedTab = 'me';
 var TabView = React.createClass({
+	statics: navigation('Hello'),
 	contextTypes: { dataStore: React.PropTypes.object.isRequired },
 	mixins: [Sentry()],
 
@@ -81,6 +82,7 @@ var TabView = React.createClass({
 					<View name="help" component={ require('../views/help') } />
 					<View name="lists" component={ require('../views/lists') } />
 					<View name="rewards" component={ require('../views/rewards') } />
+					<View name="settings" component={ require('../views/settings') } />
 				</ViewManager>
 
 				<Tabs.Navigator value={selectedTab} onChange={this.selectTab}>
