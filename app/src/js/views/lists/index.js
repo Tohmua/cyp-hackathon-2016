@@ -44,7 +44,7 @@ export default React.createClass({
     animation.Mixins.ScrollContainerToTop
   ],
 
-    statics: navigation('Lists'),
+  statics: navigation('How are you doing?'),
 
   render () {
     return (
