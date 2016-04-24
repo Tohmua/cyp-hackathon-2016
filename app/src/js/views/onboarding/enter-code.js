@@ -34,12 +34,6 @@ module.exports = React.createClass({
 		});
 	},
 
-	renderResendEmail () {
-		return (this.state.showResendEmail) ? (
-			<Link to="app:onboarding-resend-email" transition="fade" className="onboarding-footer__button">Resend Code</Link>
-		) : null;
-	},
-
 	handleFormSubmission (e) {
 
 		// prevent the form from actually submitting
@@ -63,20 +57,9 @@ module.exports = React.createClass({
 					loading: false,
 					valid: !err
 				}, function () {
-					// success: show the success icon for 1 second then fade to the app
-					if (self.state.valid === true) {
-						setTimeout(function () {
-							return self.transitionTo('app:main', {
-								transition: 'fade'
-							});
-						}, 1000);
-
-					// fail: return validity to neutral
-					} else {
-						setTimeout(function () {
-							return self.setState({ valid: null });
-						}, 2000);
-					}
+					self.transitionTo('app:main', {
+						transition: 'fade'
+					});
 				});
 			});
 		});
@@ -103,11 +86,6 @@ module.exports = React.createClass({
 							<button type="submit" className={submitButtonClass} disabled={submitIsDisabled} />
 						</div>
 					</form>
-				</Container>
-				<Container justify align="center" direction="row" className="onboarding-footer">
-					{this.renderResendEmail()}
-					<Link to="app:main" transition="fade" className="onboarding-footer__button">Skip</Link>
-					<Link to="app:onboarding" transition="fade" className="onboarding-footer__button onboarding-footer__button--primary">Back</Link>
 				</Container>
 			</Container>
 		);

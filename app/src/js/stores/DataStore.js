@@ -23,7 +23,7 @@ function DataStore () {
 
 	// generic API queue
 	var self = this;
-	var url = 'https://reacteu-api.herokuapp.com/api';
+	var url = 'https://localhost';
 	this.apiQueue = async.queue(function (opts, callback) {
 		var { authToken } = storage;
 		var { endpoint, data } = opts;
