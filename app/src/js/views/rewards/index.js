@@ -8,11 +8,6 @@ import IconButton from 'material-ui/lib/icon-button';
 import navigation from '../../lib/navigation'
 
 const styles = {
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-    },
     gridList: {
         overflowY: 'auto',
     },
