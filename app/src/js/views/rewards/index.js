@@ -4,7 +4,6 @@ import GridList   from 'material-ui/lib/grid-list/grid-list';
 import GridTile   from 'material-ui/lib/grid-list/grid-tile';
 import StarBorder from 'material-ui/lib/svg-icons/toggle/star-border';
 import IconButton from 'material-ui/lib/icon-button';
-import Dialog     from 'material-ui/lib/dialog';
 import navigation from '../../lib/navigation'
 
 const styles = {
@@ -61,22 +60,18 @@ const tilesData = [
 
 const Rewards = React.createClass({
     statics: navigation('Rewards'),
-    getInitialState() { return { open: false }},
-
-    open ()  { this.setState({ open: true }) },
-    close () { this.setState({ open: false }) },
-
+    handleClick (text) {alert(text)},
     render () {
       return (
         <Container fill justify="start" scrollable className="light-background">
           <GridList cols={4} rows={12} cellHeight={100} style={styles.gridList}>
             { tilesData.map(tile => (
-                <GridTile onTouchTap={ this.open }
-                    key={ tile.img } style={styles.tile}>
-                  <Dialog title="Dialog With Actions" modal={ false }
-                      open={this.state.open} onRequestClose={ this.close }>
-                    The actions in this window were passed in as an array of React objects.
-                  </Dialog>
+                <GridTile
+                    onTouchTap={ function () {this.handleClick(tile.title)} }
+                    onClick={ function () {this.handleClick(tile.title)} }
+                    key={ tile.img }
+                    style={ styles.tile }>
+                    <img src={ tile.img } />
                 </GridTile>
               ))
             }
