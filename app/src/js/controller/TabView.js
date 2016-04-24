@@ -10,7 +10,8 @@ import {
 } from '../touchstone'
 
 
-var lastSelectedTab = 'me';
+var lastSelectedTab = 'events'
+
 var TabView = React.createClass({
 	statics: navigation('Hello'),
 	contextTypes: { dataStore: React.PropTypes.object.isRequired },
