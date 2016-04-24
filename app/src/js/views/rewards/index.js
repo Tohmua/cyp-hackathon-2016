@@ -127,8 +127,9 @@ const Rewards = React.createClass({
                     onTouchTap={ () => this.handleClick(tile.title) }
                     onClick={ () => this.handleClick(tile.title) }
                     key={ i }
+                    title={ tile.title }
                     style={ styles.tile }>
-                    <img src={ tile.img } />
+                    <img src={ tile.img } style={{ paddingBottom: '25px' }} />
                 </GridTile>
               ))
             }
