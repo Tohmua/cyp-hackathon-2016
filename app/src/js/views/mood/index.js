@@ -66,7 +66,7 @@ module.exports = React.createClass({
             this.setState({ right: 0 })
             this.stopSwiping()
 
-            const question = this.state.questions.pop()
+            const question = this.state.questions.shift()
 
             if (typeof question !== 'undefined') {
                 this.setState({ question: question})
@@ -93,7 +93,7 @@ module.exports = React.createClass({
             this.setState({ top: 0 })
             this.stopSwiping()
 
-            const question = this.state.questions.pop()
+            const question = this.state.questions.shift()
 
             if (typeof question !== 'undefined') {
                 this.setState({ question: question})
@@ -120,7 +120,7 @@ module.exports = React.createClass({
             this.setState({ left: 0 })
             this.stopSwiping()
 
-            const question = this.state.questions.pop()
+            const question = this.state.questions.shift()
 
             if (typeof question !== 'undefined') {
                 this.setState({ question: question})
