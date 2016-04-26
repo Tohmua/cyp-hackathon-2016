@@ -27,8 +27,9 @@ const telephone = [
 const TelephoneNumbers = React.createClass({
     statics: navigation('Emergency Contacts'),
     render () {
-        const numbers = telephone.map(tel =>
+        const numbers = telephone.map((tel, i) =>
             <TelephoneEntry
+                key={i}
                 telephone={tel.number}
                 primaryText={tel.primaryText}
                 secondaryText={tel.secondaryText}
