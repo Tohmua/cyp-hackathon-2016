@@ -74,7 +74,7 @@ var TabView = React.createClass({
 		var me = this.context.dataStore.getMe()
 
 		return (
-			<Container>
+			<Container className="just-light-background">
 				<ViewManager ref="vm" name="tabs"
             defaultView={this.state.selectedTab}
             onViewChange={this.onViewChange}>

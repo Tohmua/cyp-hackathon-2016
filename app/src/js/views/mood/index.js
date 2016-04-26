@@ -17,7 +17,7 @@ module.exports = React.createClass({
     render () {
         var content =
             <Container direction="column" className="light-background">
-                <Container fill align="center" justify="center" direction="column" className="MeRegistration__body">
+                <Container fill justify="center" direction="column" className="MeRegistration__body">
                     <Swipeable className="swipeable"
                     onSwipingRight={this.swipingRight}
                     onSwipingDown={this.swipingDown}
@@ -59,7 +59,7 @@ module.exports = React.createClass({
         }
 
         if (this.state.question !== 'Done' && this.currentlySwiping()) {
-            this.setState({ right: (right / 400) })
+            this.setState({ right: (right / 200) })
         }
 
         if (this.state.right >= 1) {

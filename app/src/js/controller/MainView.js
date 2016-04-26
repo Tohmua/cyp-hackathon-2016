@@ -13,7 +13,7 @@ import TabViewController from './TabView'
 export default React.createClass({
 	render () {
 		return (
-			<Container>
+			<Container className="just-light-background">
 				<NavigationBar name="main" />
 				<ViewManager name="main" defaultView="tabs">
 					<View name="tabs" component={ TabViewController } />
